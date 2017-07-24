@@ -1,6 +1,5 @@
-# user, host, full path, and time/date
+# user, host, full path, and battery status
 # on two lines for easier vgrepping
-# entry in a nice long thread on the Arch Linux forums: http://bbs.archlinux.org/viewtopic.php?pid=521888#p521888
 
 function hg_prompt_info {
     hg prompt --angle-brackets "\

@@ -10,9 +10,9 @@ function hg_prompt_info {
 patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied(%{$reset_color%})>>" 2>/dev/null
 }
 
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%} A"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} M"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} D"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%} +"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ✱"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✗"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%} ➦"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%} ✂"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%} ✈"

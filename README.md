@@ -10,7 +10,9 @@ Follow the [oh-my-zsh instructions](https://github.com/robbyrussell/oh-my-zsh/wi
 ```
   $ mkdir -p $ZSH_CUSTOM/themes && curl https://raw.githubusercontent.com/igormp/Imp/master/imp.zsh-theme -L -o $ZSH_CUSTOM/themes/imp.zsh-theme
 ```
-Then set the theme in your **.zshrc** file 
+Then enable the battery plugin in your **.zshrc** file - this is required even if you're on a desktop, otherwise an annoying error will keep poping up.
+
+Finally, set the theme in your **.zshrc** file 
 
 ```
   ZSH_THEME="imp"

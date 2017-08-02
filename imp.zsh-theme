@@ -29,7 +29,7 @@ function mygit() {
 function battery() {
 	if plugged_in; then
 	else
-		if battery_pct > 20; then
+		if [ $(battery_pct) -gt 20 ]; then
 			echo "%{\e[0m%}%b%B[%b%{\e[1;32m%}$(battery_pct)%%%{\e[0m%}%B]%b"
 		else
 			echo "%{\e[0m%}%b%B[%b%{$fg[red]%}$(battery_pct)%%%{\e[0m%}%B]%b"

@@ -1,4 +1,4 @@
-# Imp theme
+#  Imp theme
 
 Theme based on [Zork](https://github.com/Bash-it/bash-it/wiki/Themes#zork).
 

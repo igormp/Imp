@@ -26,21 +26,9 @@ function mygit() {
   fi
 }
 
-function battery() {
-	if plugged_in; then
-	else
-		if [ $(battery_pct) -gt 20 ]; then
-			echo "%{\e[0m%}%b%B[%b%{\e[1;32m%}$(battery_pct)%%%{\e[0m%}%B]%b"
-		else
-			echo "%{\e[0m%}%b%B[%b%{$fg[red]%}$(battery_pct)%%%{\e[0m%}%B]%b"
-		fi
-	fi
-}
-
 function retcode() {}
 
 # alternate prompt with git & hg
-PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}\e[0;34m%}%B][%b%{\e[0m%}%{\e[0;36m%}%B%m%b%{\e[0;34m%}%B:%b%{\e[0;34m%}%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%}$(mygit)$(hg_prompt_info)$(battery)
+PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}\e[0;34m%}%B][%b%{\e[0m%}%{\e[0;36m%}%B%m%b%{\e[0;34m%}%B:%b%{\e[0;34m%}%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%}$(mygit)$(hg_prompt_info)
 %{\e[0;34m%}%B└─▪%b'
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
-

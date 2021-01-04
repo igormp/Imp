@@ -29,6 +29,6 @@ function mygit() {
 function retcode() {}
 
 # alternate prompt with git & hg
-PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}\e[0;34m%}%B][%b%{\e[0m%}%{\e[0;36m%}%B%m%b%{\e[0;34m%}%B:%b%{\e[0;34m%}%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%}$(mygit)$(hg_prompt_info)
+PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}\e[0;34m%}%B@%b%{\e[0m%}%{\e[0;36m%}%B%m%b%{\e[0;34m%}%B][%b%{\e[0;34m%}%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%}$(mygit)$(hg_prompt_info)
 %{\e[0;34m%}%B└─▪%b'
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '

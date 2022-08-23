@@ -2,7 +2,7 @@
 # on two lines for easier vgrepping
 
 function hg_prompt_info {
-  if (( $+commands[hg] )) && grep -q "prompt" ~/.hgrc; then
+  if (( $+commands[hg] )) && grep -qs "prompt" ~/.hgrc; then
     hg prompt --angle-brackets "\
 <hg:%{$fg[magenta]%}<branch>%{$reset_color%}><:%{$fg[magenta]%}<bookmark>%{$reset_color%}>\
 </%{$fg[yellow]%}<tags|%{$reset_color%}, %{$fg[yellow]%}>%{$reset_color%}>\

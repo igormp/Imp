@@ -1,5 +1,8 @@
-# user, host, full path, and battery status
-# on two lines for easier vgrepping
+# python venv, user, host, full path and branch on two lines for easier vgrepping
+
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo `basename $VIRTUAL_ENV`
+}
 
 function hg_prompt_info {
   if (( $+commands[hg] )) && grep -qs "prompt" ~/.hgrc; then
@@ -31,6 +34,7 @@ function mygit() {
 function retcode() {}
 
 # alternate prompt with git & hg
-PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}\e[0;34m%}%B@%b%{\e[0m%}%{\e[0;36m%}%B%m%b%{\e[0;34m%}%B][%b%{\e[0;34m%}%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%}$(mygit)$(hg_prompt_info)
-%{\e[0;34m%}%B└─▪%b'
+PROMPT=$'
+%{\e[0;34m%}%B┌─(%{$fg[magenta]%}$(virtualenv_info)%{$reset_color%}%{\e[0;34m%}%B)[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}\e[0;34m%}%B@%b%{\e[0m%}%{\e[0;36m%}%B%m%b%{\e[0;34m%}%B][%b%{\e[0;34m%}%b%{\e[1;37m%}%~%{$
+%{\e[0;34m%}%B└─▪%b  '
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '

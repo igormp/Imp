@@ -1,15 +1,7 @@
-# user, host, full path, and battery status
-# on two lines for easier vgrepping
+# python venv, user, host, full path and branch on two lines for easier vgrepping
 
-function hg_prompt_info {
-  if (( $+commands[hg] )) && grep -qs "prompt" ~/.hgrc; then
-    hg prompt --angle-brackets "\
-<hg:%{$fg[magenta]%}<branch>%{$reset_color%}><:%{$fg[magenta]%}<bookmark>%{$reset_color%}>\
-</%{$fg[yellow]%}<tags|%{$reset_color%}, %{$fg[yellow]%}>%{$reset_color%}>\
-%{$fg[red]%}<status|modified|unknown><update>%{$reset_color%}<
-patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied(%{$reset_color%})>>" 2>/dev/null
-  fi
-}
+ZSH_THEME_VIRTUALENV_PREFIX="(%{$fg[magenta]%}"
+ZSH_THEME_VIRTUALENV_SUFFIX="%{$fg[blue]%})"
 
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%} +"
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ✱"
@@ -31,6 +23,7 @@ function mygit() {
 function retcode() {}
 
 # alternate prompt with git & hg
-PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}\e[0;34m%}%B@%b%{\e[0m%}%{\e[0;36m%}%B%m%b%{\e[0;34m%}%B][%b%{\e[0;34m%}%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%}$(mygit)$(hg_prompt_info)
-%{\e[0;34m%}%B└─▪%b'
+PROMPT=$'
+%{\e[0;34m%}%B┌─$(virtualenv_prompt_info)%{\e[0;34m%}%B[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}\e[0;34m%}%B@%b%{\e[0m%}%{\e[0;36m%}%B%m%b%{\e[0;34m%}%B][%b%{\e[0;34m%}%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%}$(mygit)$(hg_prompt_info)
+%{\e[0;34m%}%B└─▪%b  '
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '

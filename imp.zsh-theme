@@ -1,7 +1,7 @@
-# python venv, user, host, full path and branch on two lines for easier vgrepping
+# user, host, full path, branch and python venv on two lines for easier vgrepping
 
-ZSH_THEME_VIRTUALENV_PREFIX="(%{$fg[magenta]%}"
-ZSH_THEME_VIRTUALENV_SUFFIX="%{$fg[blue]%})"
+ZSH_THEME_VIRTUALENV_PREFIX="[%{$fg[magenta]%}"
+ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}%B]%b"
 
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%} +"
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ✱"
@@ -23,6 +23,6 @@ function mygit() {
 function retcode() {}
 
 # alternate prompt with git & hg
-PROMPT=$'%{\e[0;34m%}%B┌─$(virtualenv_prompt_info)%{\e[0;34m%}%B[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}\e[0;34m%}%B@%b%{\e[0m%}%{\e[0;36m%}%B%m%b%{\e[0;34m%}%B][%b%{\e[0;34m%}%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%}$(mygit)$(hg_prompt_info)
+PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}\e[0;34m%}%B@%b%{\e[0m%}%{\e[0;36m%}%B%m%b%{\e[0;34m%}%B][%b%{\e[0;34m%}%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%}$(mygit)$(hg_prompt_info)%B$(virtualenv_prompt_info)%b%{\e[0;34m%}%B
 %{\e[0;34m%}%B└─▪%b'
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
